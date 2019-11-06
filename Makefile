@@ -5,8 +5,15 @@ REPO=tsuzu/github-actions-runner
 base:
 	docker build -t ${REPO} .
 
-docker: base
+base-push:
+	docker push ${REPO}
+
+docker:
 	docker build -f Dockerfile-docker -t ${REPO}:docker .
+
+docker-push:
+	docker push ${REPO}:docker
 
 build: base docker
 
+push: base-push docker-push
