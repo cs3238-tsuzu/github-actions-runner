@@ -1,4 +1,4 @@
-FROM docker:dind
+FROM ubuntu:18.04
 
 ENV AGENT_ALLOW_RUNASROOT=1
 
