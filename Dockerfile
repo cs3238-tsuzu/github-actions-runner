@@ -10,4 +10,4 @@ RUN apt update && \
 	./bin/installdependencies.sh
 
 WORKDIR /actions-runner
-CMD "./config.sh --url $GITHUB_URL --token $GITHUB_TOKEN && ./run.sh"
+CMD ./config.sh --url "$GITHUB_URL" --token "$GITHUB_TOKEN" && ./run.sh
