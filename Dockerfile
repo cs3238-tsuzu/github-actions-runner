@@ -4,7 +4,7 @@ ARG GITHUB_ACTIONS_RUNNER="https://githubassets.azureedge.net/runners/2.160.0/ac
 ENV AGENT_ALLOW_RUNASROOT=1
 
 RUN apt update && \
-	apt install -y --no-install-recommends curl ca-certificates software-properties-common apt-utils && \
+	apt install -y --no-install-recommends curl ca-certificates software-properties-common apt-utils iputils-ping && \
 	mkdir actions-runner && cd actions-runner && \
 	curl -O $GITHUB_ACTIONS_RUNNER && \
 	tar xzf *.tar.gz && \
