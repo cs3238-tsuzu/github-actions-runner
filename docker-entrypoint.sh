@@ -8,5 +8,5 @@ fi
 
 while :
 do
-	yes | ./run.sh; echo "finished"
+	yes | ./run.sh || :
 done
