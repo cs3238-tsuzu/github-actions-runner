@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: manusa/actions-publish-docker@master
+      with:
+        name: tsuzu/github-actions-runner
+        tag: latest
+        username: ${{ secrets.DOCKER_HUB_USER }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+    - name: Use Dockerfile-docker as Dockerfile
+      run: mv Dockerfile-docker Dockerfile
+    
+    - uses: manusa/actions-publish-docker@master
+      with:
+        name: tsuzu/github-actions-runner
+        tag: docker
+        username: ${{ secrets.DOCKER_HUB_USER }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
