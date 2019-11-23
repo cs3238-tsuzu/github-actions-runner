@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ARG GITHUB_ACTIONS_RUNNER="https://githubassets.azureedge.net/runners/2.160.0/actions-runner-linux-x64-2.160.0.tar.gz"
+ARG GITHUB_ACTIONS_RUNNER="https://githubassets.azureedge.net/runners/2.160.2/actions-runner-linux-x64-2.160.2.tar.gz"
 ENV AGENT_ALLOW_RUNASROOT=1
 
 RUN apt update && \
